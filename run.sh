@@ -51,7 +51,7 @@ sms_spam() {
     echo "Returning to menu in 5 seconds, CTRL + c to exit application"
     sleep 5
     clear
-    sms_spam()
+    sms_spam
 }
 
 torch_spam() {
@@ -92,7 +92,7 @@ torch_spam() {
     echo "Returning to menu in 5 seconds, CTRL + c to exit application"
     sleep 5
     clear
-    torch_spam()
+    torch_spam
 }
 
 
@@ -119,13 +119,13 @@ main_menu() {
             echo "You selected sms-spam."
             # Add your sms-spam code here
             clear
-            sms_spam();
+            sms_spam
             ;;
         2)
             echo "You selected torch-spam."
             # Add your torch-spam code here
             clear
-            torch_spam();
+            torch_spam
             ;;
         3)
             echo "Exiting..."
@@ -134,9 +134,9 @@ main_menu() {
         *)
             echo "Invalid choice. Please enter a valid option."
             clear
-            main_menu();
+            main_menu
             ;;
     esac
 }
 
-main_menu()
+main_menu
