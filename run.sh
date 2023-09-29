@@ -51,7 +51,7 @@ sms_spam() {
     echo "Returning to menu in 5 seconds, CTRL + c to exit application"
     sleep 5
     clear
-    sms_spam();
+    sms_spam()
 }
 
 torch_spam() {
@@ -92,7 +92,7 @@ torch_spam() {
     echo "Returning to menu in 5 seconds, CTRL + c to exit application"
     sleep 5
     clear
-    torch_spam();
+    torch_spam()
 }
 
 
