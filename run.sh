@@ -31,13 +31,13 @@ sms_spam() {
     echo repeats set to : {$repeats} if it is over MAX it will stop at MAX
 
     #checks if repeats is > 100
-    if ["$repeats" -gt 100]; then
+    if [ "$repeats" -gt 100 ]; then
         repeats=100
     fi
     echo -e "{$red} Remember the target will be able see your SIM card's number{$reset}"
     read -p "Type 1 to execute or anything else to cancel : " confirm
     #checks if they confirmed
-    if ["$confirm" -eq "1"]; then
+    if [ "$confirm" -eq "1" ]; then
         echo "Executing..."
     else
         exit
@@ -75,7 +75,7 @@ torch_spam() {
     echo -e "{$red} Remember this will be bright{$reset}"
     read -p "Type 1 to execute or anything else to cancel : " confirm2
     #checks if they confirmed
-    if ["$confirm2" -eq "1"]; then
+    if [ "$confirm2" -eq "1" ]; then
         echo "Executing..."
     else
         exit
