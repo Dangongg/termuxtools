@@ -19,7 +19,7 @@ sms_spam() {
     echo -e "{$yellow}|_|_|__,|_|_|___|_  |____/|__|__|_|___|___|_  | {$reset}"
     echo -e "{$orange}                |___|                     |___| {$reset}"
     echo ==============================================================
-    echo "{$red}sms-spam loaded!{$reset}"
+    echo -e "{$red}sms-spam loaded!{$reset}"
     echo ==============================================================
     read -p "Type targets phone number(with '+' and no spaces): " number
     echo target number : {$number} if this is wrong press CTRL + c
