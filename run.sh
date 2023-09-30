@@ -122,16 +122,16 @@ sos() {
     read -p "Type current battery percentage (without %) : " battery
     loopamount=0
     useled=0
-    if ["$battery" -gt 80]; then
+    if [ "$battery" -gt 80 ]; then
         loopamount=1000
         useled=1
-    elif ["$battery" -gt 60]; then
+    elif [ "$battery" -gt 60 ]; then
         loopamount=500
         useled=1
-    elif ["$battery" -gt 45]; then
+    elif [ "$battery" -gt 45 ]; then
         loopamount=200
         useled=1
-    elif ["$battery" -gt 25]; then
+    elif [ "$battery" -gt 25 ]; then
         loopamount=100
         useled=0
     else
@@ -150,7 +150,7 @@ sos() {
     echo -e "$orange NZ: 111 $reset"
     echo -e "$purple running in 3s $reset"
     sleep 3
-    if ["$useled" -eq 1]; then
+    if [ "$useled" -eq 1 ]; then
         for ((i = 1; i <= loopamount; i++)); do
         termux-torch on
         termux-location
