@@ -47,7 +47,9 @@
 
 #### Updates
 
-- update 0.1 : fixed main_menu issue
-- update 0.2 : fixed text formatting issue
-- update 0.3 : fixed sms_spam issue
-- update 0.4 : added new function (sos) (requires location information)
+- realase 1
+- update 1.1 : fixed main_menu issue
+- update 1.2 : fixed text formatting issue
+- update 1.3 : fixed sms_spam issue
+- release 2 : added new function (sos) (requires location information)
+- update 2.1 fixed if-statement issue
