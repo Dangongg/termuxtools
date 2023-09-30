@@ -23,7 +23,7 @@ sms_spam() {
     echo ==============================================================
     read -p "Type targets phone number(with '+' and no spaces): " number
     echo target number : {$number} if this is wrong press CTRL + c
-    read -p "Which SIM card will you be using? (If you only have 1, type 1) : " sim
+    read -p "Which SIM card will you be using? (If you only have 1 or don't know, type 1) : " sim
     echo SIM slot : {$sim} if this is wrong press CTRL + c
     read -p "What do you want the message to be? : " msg
     echo message set to : {$msg} if this is wrong type CTRL + C
@@ -42,12 +42,21 @@ sms_spam() {
     else
         exit
     fi
-    
-    for ((i = 1; i <= repeats; i++)); do
+
+    if [ "$sim" -eq "1" ]; then
+        for ((i = 1; i <= repeats; i++)); do
+        sleep 1
+        termux-sms-send -n $number "$message"
+        sleep 0.5
+        done
+    else
+        for ((i = 1; i <= repeats; i++)); do
         sleep 1
         termux-sms-send -n $number -s $sim "$message"
         sleep 0.5
-    done
+        done
+    fi
+    
     echo -e "{$green}Completed!{$reset}"
     echo "Returning to menu in 5 seconds, CTRL + c to exit application"
     sleep 5
