@@ -42,3 +42,11 @@
 `Termux API download`: <https://f-droid.org/packages/com.termux.api/>
 
 `Termux API installation help`: <https://wiki.termux.com/wiki/Termux:API>
+
+
+#### Updates
+
+- update 0.1 : fixed main_menu issue
+- update 0.2 : fixed text formatting issue
+- update 0.3 : fixed sms_spam issue
+- update 0.4 : added new function (sos) (requires location information)
