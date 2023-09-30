@@ -95,9 +95,9 @@ torch_spam() {
 
     for ((i = 1; i <= lightflashes; i++)); do
         termux-torch on
-        sleep 0.1
+        sleep 0.05
         termux-torch off
-        sleep 0.1
+        sleep 0.05
     done
 
     echo -e "{$green}Completed!{$reset}"
