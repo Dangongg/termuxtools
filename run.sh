@@ -107,6 +107,69 @@ torch_spam() {
     torch_spam
 }
 
+sos() {
+    clear
+    echo " "
+    echo -e "{$red}   _____  ____   _____ {$reset}"
+    echo -e "{$red}  / ____|/ __ \ / ____|{$reset}"
+    echo -e "{$red} | (___ | |  | | (___  {$reset}"
+    echo -e "{$red}  \___ \| |  | |\___ \ {$reset}"
+    echo -e "{$red}  ____) | |__| |____) |{$reset}"
+    echo -e "{$red} |_____/ \____/|_____/ {$reset}"
+    echo ==============================================================
+    echo -e "{$yellow}S.O.S loaded!{$reset}"
+    echo ==============================================================
+    read -p "Type current battery percentage (without %) : " battery
+    loopamount=0
+    useled=0
+    if ["$battery" -gt 80]; then
+        loopamount=1000
+        useled=1
+    elif ["$battery" -gt 60]; then
+        loopamount=500
+        useled=1
+    elif ["$battery" -gt 45]; then
+        loopamount=200
+        useled=1
+    elif ["$battery" -gt 25]; then
+        loopamount=100
+        useled=0
+    else
+        loopamount=2
+        useled=0
+        echo -e "$orange Battery too low, will update location once. $reset"
+    fi
+
+    echo -e "$purple Please wait, fetching GPS Data...$reset"
+    echo -e "$green If you are in need of assistance hand over your location information to the authorities.$reset"
+    echo -e "Emergency numbers:"
+    echo -e "$orange US/CA: 911 $reset"
+    echo -e "$yellow EU/EEA: 112 $reset"
+    echo -e "$orange UK/IRE: 999 $reset"
+    echo -e "$yellow AUS: 000 $reset"
+    echo -e "$orange NZ: 111 $reset"
+    echo -e "$purple running in 3s $reset"
+    sleep 3
+    if ["$useled" -eq 1]; then
+        for ((i = 1; i <= loopamount; i++)); do
+        termux-torch on
+        termux-location
+        sleep 5
+        termux-torch off
+        sleep 5
+        done
+    else
+        for ((i = 1; i <= loopamount; i++)); do
+        termux-location
+        sleep 10
+        sleep 10
+        done
+    fi
+    echo -e "$green loop finished, exiting $reset"
+    sleep 3
+    exit
+}
+
 
 main_menu() {
     clear
@@ -120,6 +183,7 @@ main_menu() {
     echo -e "{$red}handyDANdy loaded!{$reset}"
     echo Please select one of the options:
     echo "(requires TermuxAPI)"
+    echo "[0] s.o.s"
     echo "[1] sms-spam"
     echo "[2] torch-spam"
     echo "[3] exit"
@@ -143,6 +207,11 @@ main_menu() {
             echo "Exiting..."
             sleep 2
             exit  # Exit the script
+            ;;
+        0)
+            echo "You selected s.o.s."
+            sleep 2
+            sos
             ;;
         *)
             echo "Invalid choice. Please enter a valid option."
