@@ -64,7 +64,7 @@ torch_spam() {
     echo -e "{$yellow}|_|_|__,|_|_|___|_  |____/|__|__|_|___|___|_  | {$reset}"
     echo -e "{$orange}                |___|                     |___| {$reset}"
     echo ==============================================================
-    echo "{$red}torch-spam loaded!{$reset}"
+    echo -e "{$red}torch-spam loaded!{$reset}"
     echo ==============================================================
     read -p "How many times do you want to spam? MAX_35 : " lightflashes
     echo "Repeats set to : {$lightflashes}"
@@ -107,7 +107,7 @@ main_menu() {
     echo -e "{$yellow}|_|_|__,|_|_|___|_  |____/|__|__|_|___|___|_  | {$reset}"
     echo -e "{$orange}                |___|                     |___| {$reset}"
     echo ==============================================================
-    echo "{$red}handyDANdy loaded!{$reset}"
+    echo -e "{$red}handyDANdy loaded!{$reset}"
     echo Please select one of the options:
     echo "(requires TermuxAPI)"
     echo "[1] sms-spam"
