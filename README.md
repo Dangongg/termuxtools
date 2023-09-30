@@ -3,7 +3,7 @@
 - Sms-spam
 - Torch-spam
 
-#### requirements
+### requirements
 *Termux application*
 
 *Termux API*
@@ -11,7 +11,7 @@
 
 
 
-**Installation**
+### Installation
 
 - Make sure you have git installed
 `$ sudo apt install git`
@@ -22,7 +22,7 @@
 - Now you've installed the repo!
 
 
-**Running**
+### Running
 - Now that you've installed the repository we need to enter it
 `$ cd termuxtools`
 - 
