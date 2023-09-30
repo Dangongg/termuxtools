@@ -19,7 +19,7 @@ sms_spam() {
     echo -e "{$yellow}|_|_|__,|_|_|___|_  |____/|__|__|_|___|___|_  | {$reset}"
     echo -e "{$orange}                |___|                     |___| {$reset}"
     echo ==============================================================
-    echo {$red}sms-spam loaded!{$reset}
+    echo "{$red}sms-spam loaded!{$reset}"
     echo ==============================================================
     read -p "Type targets phone number(with '+' and no spaces): " number
     echo target number : {$number} if this is wrong press CTRL + c
@@ -27,12 +27,12 @@ sms_spam() {
     echo SIM slot : {$sim} if this is wrong press CTRL + c
     read -p "What do you want the message to be? : " msg
     echo message set to : {$msg} if this is wrong type CTRL + C
-    read -p "How many times do you want to send this message? MAX_100 : " repeats
+    read -p "How many times do you want to send this message? MAX_50 : " repeats
     echo repeats set to : {$repeats} if it is over MAX it will stop at MAX
 
-    #checks if repeats is > 100
-    if [ "$repeats" -gt 100 ]; then
-        repeats=100
+    #checks if repeats is > 50
+    if [ "$repeats" -gt 50 ]; then
+        repeats=50
     fi
     echo -e "{$red} Remember the target will be able see your SIM card's number{$reset}"
     read -p "Type 1 to execute or anything else to cancel : " confirm
@@ -42,8 +42,9 @@ sms_spam() {
     else
         exit
     fi
-
+    
     for ((i = 1; i <= repeats; i++)); do
+        sleep 1
         termux-sms-send -n $number -s $sim "$message"
         sleep 0.5
     done
@@ -63,13 +64,14 @@ torch_spam() {
     echo -e "{$yellow}|_|_|__,|_|_|___|_  |____/|__|__|_|___|___|_  | {$reset}"
     echo -e "{$orange}                |___|                     |___| {$reset}"
     echo ==============================================================
-    echo {$red}torch-spam loaded!{$reset}
+    echo "{$red}torch-spam loaded!{$reset}"
     echo ==============================================================
-    read -p "How many times do you want to spam? MAX_25 : " lightflashes
+    read -p "How many times do you want to spam? MAX_35 : " lightflashes
     echo "Repeats set to : {$lightflashes}"
-    #checks if flashes > 25
-    if ["$lightflashes" -gt 25 ]; then
-        lightflashes=25
+    #checks if flashes > 35
+    
+    if ["$lightflashes" -gt 35 ]; then
+        lightflashes=35
     fi
 
     echo -e "{$red} Remember this will be bright{$reset}"
@@ -83,9 +85,9 @@ torch_spam() {
 
     for ((i = 1; i <= lightflashes; i++)); do
         termux-torch on
-        sleep 0.15
+        sleep 0.1
         termux-torch off
-        sleep 0.15
+        sleep 0.1
     done
 
     echo -e "{$green}Completed!{$reset}"
@@ -105,7 +107,7 @@ main_menu() {
     echo -e "{$yellow}|_|_|__,|_|_|___|_  |____/|__|__|_|___|___|_  | {$reset}"
     echo -e "{$orange}                |___|                     |___| {$reset}"
     echo ==============================================================
-    echo {$red}handyDANdy loaded!{$reset}
+    echo "{$red}handyDANdy loaded!{$reset}"
     echo Please select one of the options:
     echo "(requires TermuxAPI)"
     echo "[1] sms-spam"
@@ -117,22 +119,24 @@ main_menu() {
     case "$option" in
         1)
             echo "You selected sms-spam."
-            # Add your sms-spam code here
+            sleep 2
             clear
             sms_spam
             ;;
         2)
             echo "You selected torch-spam."
-            # Add your torch-spam code here
+            sleep 2
             clear
             torch_spam
             ;;
         3)
             echo "Exiting..."
+            sleep 2
             exit  # Exit the script
             ;;
         *)
             echo "Invalid choice. Please enter a valid option."
+            sleep 2
             clear
             main_menu
             ;;
