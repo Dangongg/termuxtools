@@ -35,6 +35,9 @@
 
 
 `Github repository` : <https://github.com/Dangongg/termuxtools>
+
 `Termux official site`: <https://termux.dev/en/>
+
 `Termux API download`: <https://f-droid.org/packages/com.termux.api/>
+
 `Termux API installation help`: <https://wiki.termux.com/wiki/Termux:API>
