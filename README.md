@@ -3,7 +3,7 @@
 - Sms-spam
 - Torch-spam
 
-### requirements
+### Requirements
 *Termux application*
 
 *Termux API*
