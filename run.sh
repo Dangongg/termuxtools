@@ -44,16 +44,17 @@ sms_spam() {
     fi
 
     if [ "$sim" -eq "1" ]; then
+        echo -e "$yellow using default sim"
         for ((i = 1; i <= repeats; i++)); do
         sleep 1
         termux-sms-send -n $number "$message"
-        sleep 0.5
+        sleep 1
         done
     else
         for ((i = 1; i <= repeats; i++)); do
         sleep 1
         termux-sms-send -n $number -s $sim "$message"
-        sleep 0.5
+        sleep 1
         done
     fi
     
