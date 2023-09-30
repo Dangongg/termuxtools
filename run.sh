@@ -154,14 +154,13 @@ sos() {
         for ((i = 1; i <= loopamount; i++)); do
         termux-torch on
         termux-location
-        sleep 5
+        sleep 2
         termux-torch off
-        sleep 5
+        sleep 2
         done
     else
         for ((i = 1; i <= loopamount; i++)); do
         termux-location
-        sleep 10
         sleep 10
         done
     fi
