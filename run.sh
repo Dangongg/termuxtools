@@ -47,14 +47,14 @@ sms_spam() {
         echo -e "$yellow using default sim"
         for ((i = 1; i <= repeats; i++)); do
         sleep 1
-        termux-sms-send -n $number "$message"
-        sleep 1
+        termux-sms-send -n $number "$msg"
+        sleep 0.5
         done
     else
         for ((i = 1; i <= repeats; i++)); do
         sleep 1
-        termux-sms-send -n $number -s $sim "$message"
-        sleep 1
+        termux-sms-send -n $number -s $sim "$msg"
+        sleep 0.5
         done
     fi
     
