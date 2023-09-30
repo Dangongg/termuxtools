@@ -2,6 +2,7 @@
 
 - Sms-spam
 - Torch-spam
+- S.O.S
 
 ### Requirements
 *Termux application*
