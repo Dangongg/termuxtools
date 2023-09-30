@@ -51,5 +51,7 @@
 - update 1.1 : fixed main_menu issue
 - update 1.2 : fixed text formatting issue
 - update 1.3 : fixed sms_spam issue
+- update 1.4 tweened sleep functions
 - release 2 : added new function (sos) (requires location information)
 - update 2.1 fixed if-statement issue
+- update 2.2 : tweened sleep functions in sos
